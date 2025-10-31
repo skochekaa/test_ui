@@ -1,8 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pytest
+
 from pages.login_page import LoginPage
+from pages.products_page import ProductsPage
+
 import time
+
+
 
 
 @pytest.fixture()
@@ -17,3 +22,8 @@ def driver():
 @pytest.fixture()
 def login_page(driver):
     return LoginPage(driver)
+
+
+@pytest.fixture()
+def products_page(driver):
+    return ProductsPage(driver)
